@@ -12,6 +12,10 @@ Copyright: None
 
 import sys
 
+data = {"c" -> "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "n" -> "0123456789",
+        "s" -> "./,';:_-=+)(*&^%$#@!~|" }
+
 if len( sys.argv) >1:
     template = sys.argv[1]
 else:
@@ -19,3 +23,5 @@ else:
 
 for a in template:
     print( a)
+
+print( "\nOK")
