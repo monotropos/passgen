@@ -11,17 +11,20 @@ Copyright: None
 """
 
 import sys
+from random import randint
 
-data = {"c" -> "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-        "n" -> "0123456789",
-        "s" -> "./,';:_-=+)(*&^%$#@!~|" }
+data = {"c": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "n": "0123456789",
+        "s": "./,';:_-=+)(*&^%$#@!~|" }
 
 if len( sys.argv) >1:
     template = sys.argv[1]
+    # TODO: check template if it contains only c, n, s
 else:
     template = "cnnsnn"
+    template = "csnnc"
 
 for a in template:
-    print( a)
-
-print( "\nOK")
+    r = randint(0, len( data[a])-1)
+    print( data[a][r], end="")
+print("")
