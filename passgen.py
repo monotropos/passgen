@@ -11,6 +11,7 @@ Copyright: None
 """
 
 import sys
+import re
 from random import randint
 
 data = {"c": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -18,11 +19,10 @@ data = {"c": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
         "s": "./,';:_-=+)(*&^%$#@!~|" }
 
 if len( sys.argv) >1:
-    template = sys.argv[1]
-    # TODO: check template if it contains only c, n, s
+    # check template if it contains only c, n, s
+    template = re.sub( "[^cns]", "", sys.argv[1])
 else:
     template = "cnnsnn"
-    template = "csnnc"
 
 for a in template:
     r = randint(0, len( data[a])-1)
