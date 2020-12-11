@@ -2,7 +2,7 @@
 Demo project to generate random passwords according to a template
 
 ## Usage
-`passgen.py <template>`
+`passgen.py <template> <number of iterations>`
 where template can be any combination of characters l, c, v, n and s.
  - l: any letter, consonant or vowel
  - c: consonant
